@@ -1,0 +1,443 @@
+:root {
+    --primary-color: #31438f; /* Dark Blue */
+    --secondary-color: #f8fafc; /* Light Gray */
+    --accent-color: #5cabde; /* Soft Blue */
+
+    
+    --primary-color-reverse: #f8fafc;
+    --secondary-color-reverse: #31438f;
+    --accent-color-reverse: #5cabde;
+        --background-color: #ffffff;
+        --text-color: #333333;
+        --border-color: #cccccc;
+        --accent-color: #007bff; /* Light theme accent */
+    }
+    
+    body.dark-mode {
+        --background-color: #333333;
+        --text-color: #ffffff;
+        --border-color: #555555;
+        --accent-color: #ff9800; /* Dark theme accent */
+    }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+.content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.section {
+    margin-top: 2rem;
+}
+
+.box-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(20% - 1rem);
+    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.box img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.box h3 {
+    margin: 0.5rem 0;
+}
+
+.box button {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: rgb(205, 205, 228);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.theme-toggle {
+    font-family: 'Poppins', sans-serif;
+}
+.section h2 {
+    font-size: 48px;
+}
+button {
+    font-family: 'Poppins', sans-serif;
+}
+#trolling-link {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth animation for movement */
+}
+
+#trolling-link:hover {
+    cursor: pointer;
+}
+.message-bubble {
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    left: calc(73% - 50px); /* Centered under the "About" link */
+    width: 100px;
+    padding: 8px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add a small triangle pointing to the "About" link */
+.message-bubble::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: calc(50% - 6px);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #555;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/* Style for the search bar */
+#search-bar {
+    margin-left: 15px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 4.7px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Adjust hover effect for the search bar */
+#search-bar:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 4px var(--accent-color);
+}
+
+/* Highlight effect for the searched box */
+.box.highlight {
+    outline: 2px solid var(--accent-color); /* Adapts to theme */
+    outline-offset: 2px;
+    animation: highlightFade 1s ease-in-out;
+}
+
+/* Highlight fade animation */
+@keyframes highlightFade {
+    from {
+        outline-color: var(--accent-color);
+    }
+    to {
+        outline-color: transparent;
+    }
+}
+.announcement-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 18px;
+    z-index: 10000; /* Ensures the icon stays clickable */
+}
+
+.announcement-icon {
+    font-size: 20px;
+    left: -67px;
+    transition: transform 0.3s ease;
+}
+
+.announcement-container:hover .announcement-icon {
+    transform: scale(1.2);
+}
+
+.changelog-box {
+    position: absolute;
+    top: 70px;
+    left: -350%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.changelog-box h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.changelog-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.changelog-box li {
+    padding: px 0;
+}
+
+.announcement-container:hover .changelog-box {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+}
+
+.breaking-news {
+    background-color: #007bff; /* Matches fiery theme */
+    color: #fff;
+    padding: 15px 0;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.breaking-news-content {
+    display: flex; /* Align content horizontally */
+    align-items: center; /* Vertically center the content */
+    white-space: nowrap;
+    animation: smoothScroll 15s linear infinite; /* Apply animation to the whole container */
+}
+
+.breaking-news-gif {
+    width: 80px; /* Adjust width as needed */
+    height: auto;
+    margin-right: 10px; /* Space between gif and text */
+}
+
+.breaking-news-text {
+    display: inline-block;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateX(99%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
+/* ===== Responsive Styles ===== */
+
+/* For screens 1280x800 and below */
+@media (max-width: 1280px) {
+    .box-container {
+        gap: 2rem;
+    }
+
+    .box {
+        width: calc(33.33% - 1rem); /* 3 per row */
+    }
+
+    .section h2 {
+        font-size: 36px;
+    }
+
+    .content h1 {
+        font-size: 40px;
+    }
+
+    #search-bar {
+        width: 150px;
+    }
+}
+
+/* For tablets and small screens below 900px */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar div {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .box {
+        width: calc(50% - 1rem); /* 2 per row */
+    }
+
+    .changelog-box {
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
+/* For mobile screens 600px and below */
+@media (max-width: 600px) {
+    .box {
+        width: 100%;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .navbar span {
+        font-size: 24px;
+    }
+
+    #search-bar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .announcement-container {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .footer {
+        position: relative;
+    }
+
+    .breaking-news-content {
+        flex-direction: column;
+        animation: none;
+    }
+
+    .breaking-news-text {
+        text-align: center;
+    }
+}
+.button {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
