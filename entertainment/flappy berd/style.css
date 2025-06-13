@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #70c5ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .game-container {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: #70c5ce;
+    border: 2px solid #000;
+    overflow: hidden;
+  }
+  
+  #start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+  }
+  
+  #bird {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    display: none; /* Hide bird initially */
+  }
+  
+  .obstacle {
+    position: absolute;
+    width: 60px;
+    background-color: #4CAF50;
+    display: none; /* Hide obstacles initially */
+  }
+  
+  #obstacle-top {
+    top: 0;
+  }
+  
+  #obstacle-bottom {
+    bottom: 0;
+  }
+  
+  #score {
+    margin-top: 20px;
+    font-size: 24px;
+    color: white;
+    display: none; /* Hide score initially */
+  }
